@@ -23,4 +23,8 @@ public class IMDbSignIn {
     passwordField.setValue(password);
     signInBtn.click();
   }
+
+  public void login(){
+    login(System.getProperty("imdb.user"),System.getProperty("imdb.password"));
+  }
 }

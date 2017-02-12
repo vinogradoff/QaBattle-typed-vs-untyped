@@ -16,17 +16,16 @@ public class IMDBListsTest {
 
   @BeforeClass
   public static void setup(){
-    Configuration.pageLoadStrategy="eager";
-    Configuration.fastSetValue=true;
-    open("http://imdb.com");
+    open("/");
     new UserNavigation().openSignInOptions();
     new SignInAndRegistration().signInWithIMDb();
-    new IMDbSignIn().login("alexei@vinogradoff.de","QABattle2017");
+    new IMDbSignIn().login();
 
   }
 
   @Test
-  public void test(){
-    assertTrue(true);
+  public void listWorkflow(){
+    new UserNavigation().openYourLists();
+    sleep(5000);
   }
 }
