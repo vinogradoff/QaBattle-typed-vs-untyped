@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 /**
- * Created by vinogradov on 12.02.17.
+ * @author Alexei Vinogradov
  */
 public class IMDbSignIn {
   SelenideElement title = $("div.a-section h1"),
@@ -27,4 +27,5 @@ public class IMDbSignIn {
   public void login(){
     login(System.getProperty("imdb.user"),System.getProperty("imdb.password"));
   }
+
 }

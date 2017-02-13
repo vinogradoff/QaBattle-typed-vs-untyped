@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selectors.byLinkText;
 import static com.codeborne.selenide.Selenide.$;
 
 /**
- * Created by vinogradov on 12.02.17.
+ * @author Alexei Vinogradov
  */
 public class SignInAndRegistration {
 
