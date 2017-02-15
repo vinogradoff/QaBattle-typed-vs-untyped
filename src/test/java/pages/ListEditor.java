@@ -16,7 +16,8 @@ public class ListEditor {
 
   SelenideElement editorContainer = $("div.list_edit"),
           addField = editorContainer.$("div.add input"),
-          searchBtn=editorContainer.$(".search");
+          searchBtn=editorContainer.$(".search"),
+          doneBtn=editorContainer.$(".save");
 
   ElementsCollection results = $$("div.results li");
 
@@ -30,5 +31,9 @@ public class ListEditor {
     addField.setValue(movieOrTvShow);
     searchBtn.click();
     results.find(text(movieOrTvShow)).click();
+  }
+
+  public void save(){
+    doneBtn.click();
   }
 }

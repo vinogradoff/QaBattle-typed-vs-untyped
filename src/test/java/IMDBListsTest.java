@@ -38,6 +38,7 @@ public class IMDBListsTest {
             "The Walking Dead (2010 TV Series)",
             "Narcos (2015 TV Series)",
             "The Big Bang Theory (2007 TV Series)"));
+    listEditor.save();
     sleep(5000);
   }
 }
