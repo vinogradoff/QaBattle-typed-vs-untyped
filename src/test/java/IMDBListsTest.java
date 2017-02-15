@@ -1,12 +1,9 @@
-import com.codeborne.selenide.CollectionCondition;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import com.codeborne.selenide.*;
+import org.junit.*;
 import pages.*;
+import steps.*;
 
-import java.util.List;
-
-import static com.codeborne.selenide.Condition.exactText;
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 /**
@@ -17,10 +14,7 @@ public class IMDBListsTest {
   @BeforeClass
   public static void setup(){
     open("/");
-    new UserNavigation().openSignInOptions();
-    new SignInAndRegistration().signInWithIMDb();
-    new IMDbSignIn().login();
-
+    LoginStep.login();
   }
 
   @Test

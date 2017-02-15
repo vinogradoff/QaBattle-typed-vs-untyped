@@ -1,6 +1,6 @@
 package pages;
 
-import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.*;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
@@ -17,8 +17,8 @@ public class UserNavigation {
 
   SelenideElement linkToSignIn = $(byLinkText("Other Sign in options")),
           navigationContainer = $("#consumer_user_nav"),
-          userLink=navigationContainer.$("#navUserMenu"),
-          yourListsLink=navigationContainer.$(".sub_nav").$(byLinkText("Your Lists"));
+          userLink = navigationContainer.$("#navUserMenu"),
+          yourListsLink = navigationContainer.$(".sub_nav").$(byLinkText("Your Lists"));
 
   public void openSignInOptions() {
     linkToSignIn.click();
