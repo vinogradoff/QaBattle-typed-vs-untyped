@@ -1,4 +1,4 @@
-package pages;
+package pages.lists;
 
 import com.codeborne.selenide.*;
 
@@ -10,14 +10,15 @@ import static com.codeborne.selenide.Selenide.*;
  */
 public class ListViewer {
 
-  public ListViewer(){
+  public ListViewer() {
     container.shouldBe(visible);
   }
-  SelenideElement container=$(".list_titles"),
+
+  SelenideElement container = $(".list_titles"),
           compactViewBtn = container.$(".views .compact"),
           removeBtn = container.$(".bulk .delete");
 
-  public void showCompactView(){
+  public void showCompactView() {
     compactViewBtn.click();
   }
 

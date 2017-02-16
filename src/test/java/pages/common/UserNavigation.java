@@ -1,4 +1,4 @@
-package pages;
+package pages.common;
 
 import com.codeborne.selenide.*;
 

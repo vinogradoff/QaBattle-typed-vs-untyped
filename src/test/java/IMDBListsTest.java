@@ -1,5 +1,6 @@
 import org.junit.*;
-import pages.*;
+import pages.common.*;
+import pages.lists.*;
 import steps.*;
 
 import static com.codeborne.selenide.CollectionCondition.*;
@@ -62,6 +63,7 @@ public class IMDBListsTest {
   public static void deleteTitles() {
     CompactView view = new CompactView();
     view.removeAllFromList();
+
     view.titles.shouldHaveSize(0);
   }
 }
