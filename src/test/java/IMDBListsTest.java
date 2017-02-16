@@ -54,6 +54,14 @@ public class IMDBListsTest {
     view.titles.shouldHave(exactTexts(
             "The Walking Dead",
             "Narcos"));
-    sleep(5000);
+    genresFilter.clearAll();
+    view.titles.shouldHaveSize(3);
+  }
+
+  @AfterClass
+  public static void deleteTitles() {
+    CompactView view = new CompactView();
+    view.removeAllFromList();
+    view.titles.shouldHaveSize(0);
   }
 }

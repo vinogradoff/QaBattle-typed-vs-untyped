@@ -14,9 +14,14 @@ public class ListViewer {
     container.shouldBe(visible);
   }
   SelenideElement container=$(".list_titles"),
-      compactViewBtn=container.$(".views .compact");
+          compactViewBtn = container.$(".views .compact"),
+          removeBtn = container.$(".bulk .delete");
 
   public void showCompactView(){
     compactViewBtn.click();
+  }
+
+  public void removeSelected() {
+    removeBtn.click();
   }
 }

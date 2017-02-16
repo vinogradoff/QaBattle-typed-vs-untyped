@@ -14,6 +14,7 @@ public class GenresFilter {
   SelenideElement container = $(".genres");
 
   public ElementsCollection genres = container.$$("li");
+  public SelenideElement clearAllBtn = $(".clear-all");
 
   public GenresFilter() {
     container.shouldBe(visible);
@@ -21,5 +22,9 @@ public class GenresFilter {
 
   public void selectGenre(String genre) {
     genres.findBy(text(genre)).$("input").click();
+  }
+
+  public void clearAll() {
+    clearAllBtn.click();
   }
 }
