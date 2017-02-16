@@ -46,6 +46,14 @@ public class IMDBListsTest {
             "The Walking Dead",
             "The Big Bang Theory",
             "Narcos"));
+    GenresFilter genresFilter = new GenresFilter();
+    genresFilter.genres.shouldHave(texts("Biography (1)", "Comedy (1)", "Crime (1)",
+            "Drama (2)", "Horror (1)", "Romance (1)", "Thriller (1)"));
+    genresFilter.selectGenre("Drama");
+    view.titles.shouldHaveSize(2);
+    view.titles.shouldHave(exactTexts(
+            "The Walking Dead",
+            "Narcos"));
     sleep(5000);
   }
 }
