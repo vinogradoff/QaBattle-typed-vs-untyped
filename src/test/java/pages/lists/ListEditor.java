@@ -33,4 +33,9 @@ public class ListEditor {
   public void save() {
     doneBtn.click();
   }
+
+  public void deleteByTitle(String title) {
+    SelenideElement filmLine = namesInTheList.findBy(text(title)).closest("li");
+    filmLine.$(".delete").click();
+  }
 }

@@ -65,6 +65,9 @@ public class IMDBListsTest {
             "Narcos"));
     listViewer.editList();
     listEditor = new ListEditor();
+    listEditor.namesInTheList.shouldHaveSize(3);
+    listEditor.deleteByTitle("The Big Bang Theory");
+    listEditor.namesInTheList.shouldHaveSize(2);
     listEditor.save();
     new ListViewer().showCompactView();
     /*genresFilter.clearAll();
