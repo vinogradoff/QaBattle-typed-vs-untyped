@@ -3,6 +3,7 @@ package pages.lists;
 import com.codeborne.selenide.*;
 
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 /**
@@ -16,10 +17,15 @@ public class ListViewer {
 
   SelenideElement container = $(".list_titles"),
           compactViewBtn = container.$(".views .compact"),
-          removeBtn = container.$(".bulk .delete");
+          removeBtn = container.$(".bulk .delete"),
+          editListBtn = container.$(byLinkText("Edit list"));
 
   public void showCompactView() {
     compactViewBtn.click();
+  }
+
+  public void editList() {
+    editListBtn.click();
   }
 
   public void removeSelected() {

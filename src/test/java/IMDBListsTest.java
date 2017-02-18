@@ -1,3 +1,4 @@
+import domain.*;
 import org.junit.*;
 import pages.common.*;
 import pages.lists.*;
@@ -6,6 +7,8 @@ import steps.*;
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
+import static org.hamcrest.core.Is.*;
+import static org.junit.Assert.*;
 
 /**
  * @author Alexei Vinogradov
@@ -34,7 +37,8 @@ public class IMDBListsTest {
             "Narcos (2015 TV Series)",
             "The Big Bang Theory (2007 TV Series)"));
     listEditor.save();
-    new ListViewer().showCompactView();
+    ListViewer listViewer = new ListViewer();
+    listViewer.showCompactView();
     CompactView view = new CompactView();
     view.titles.shouldHaveSize(3);
     view.titles.shouldHave(exactTexts(
@@ -47,6 +51,10 @@ public class IMDBListsTest {
             "The Walking Dead",
             "The Big Bang Theory",
             "Narcos"));
+    Film filmNarcos = view.getFilmInfoByTitle("Narcos");
+    assertThat(filmNarcos.title, is("Narcos"));
+    assertThat(filmNarcos.year, is("2015"));
+    assertThat(filmNarcos.type, is("TV Series"));
     GenresFilter genresFilter = new GenresFilter();
     genresFilter.genres.shouldHave(texts("Biography (1)", "Comedy (1)", "Crime (1)",
             "Drama (2)", "Horror (1)", "Romance (1)", "Thriller (1)"));
@@ -55,15 +63,18 @@ public class IMDBListsTest {
     view.titles.shouldHave(exactTexts(
             "The Walking Dead",
             "Narcos"));
-    genresFilter.clearAll();
-    view.titles.shouldHaveSize(3);
+    listViewer.editList();
+    listEditor = new ListEditor();
+    listEditor.save();
+    new ListViewer().showCompactView();
+    /*genresFilter.clearAll();
+    view.titles.shouldHaveSize(3);*/
   }
 
   @AfterClass
   public static void deleteTitles() {
     CompactView view = new CompactView();
     view.removeAllFromList();
-
     view.titles.shouldHaveSize(0);
   }
 }
