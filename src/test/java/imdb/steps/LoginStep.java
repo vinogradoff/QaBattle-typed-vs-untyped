@@ -1,7 +1,7 @@
-package steps;
+package imdb.steps;
 
-import pages.common.*;
-import pages.login.*;
+import imdb.pages.common.*;
+import imdb.pages.login.*;
 
 /**
  * @author Alexei Vinogradov.

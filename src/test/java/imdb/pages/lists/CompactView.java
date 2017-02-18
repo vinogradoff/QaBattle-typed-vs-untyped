@@ -1,7 +1,7 @@
-package pages.lists;
+package imdb.pages.lists;
 
 import com.codeborne.selenide.*;
-import domain.*;
+import imdb.domain.*;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;

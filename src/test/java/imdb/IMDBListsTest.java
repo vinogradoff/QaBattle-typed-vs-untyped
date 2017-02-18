@@ -1,8 +1,10 @@
-import domain.*;
+package imdb;
+
+import imdb.domain.*;
+import imdb.pages.common.*;
+import imdb.pages.lists.*;
+import imdb.steps.*;
 import org.junit.*;
-import pages.common.*;
-import pages.lists.*;
-import steps.*;
 
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;

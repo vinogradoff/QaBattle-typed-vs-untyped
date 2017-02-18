@@ -1,4 +1,4 @@
-package pages.login;
+package imdb.pages.login;
 
 import com.codeborne.selenide.*;
 

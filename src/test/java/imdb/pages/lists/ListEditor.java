@@ -1,4 +1,4 @@
-package pages.lists;
+package imdb.pages.lists;
 
 import com.codeborne.selenide.*;
 
