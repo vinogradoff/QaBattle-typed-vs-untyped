@@ -26,7 +26,7 @@ public class EpamFormTest {
     application.firstname = "Alexei";
     application.lastname = "Vinogradov";
     application.email = "qa@vinogradov-it.de";
-    application.land = "Germany";
+    application.country = "Germany";
     application.city = "Dusseldorf";
     application.message = "Hire me, I am the best!";
 
@@ -35,7 +35,7 @@ public class EpamFormTest {
     form.firstname.shouldHave(value(application.firstname));
     form.lastname.shouldHave(value("Vinogradov"));
     form.email.shouldHave(value(application.email));
-    form.land.shouldHave(text(application.land));
+    form.country.shouldHave(text(application.country));
     form.city.shouldHave(text(application.city));
     form.message.shouldHave(value(application.message));
 

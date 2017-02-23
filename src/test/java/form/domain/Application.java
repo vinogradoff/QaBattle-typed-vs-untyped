@@ -8,7 +8,7 @@ public class Application {
   public String firstname,
           lastname,
           email,
-          land,
+          country,
           city,
           message;
 }
