@@ -1,10 +1,10 @@
-package htmls;
+package inputs;
 
 import org.junit.*;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
-import static htmls.pages.Input.*;
+import static inputs.pages.Input.*;
 
 /**
  * @author Alexei Vinogradov.

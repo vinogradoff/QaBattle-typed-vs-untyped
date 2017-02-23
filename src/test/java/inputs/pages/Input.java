@@ -1,4 +1,4 @@
-package htmls.pages;
+package inputs.pages;
 
 import com.codeborne.selenide.*;
 
