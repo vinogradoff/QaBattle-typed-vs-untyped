@@ -5,7 +5,7 @@ package form.domain;
  */
 public class Application {
 
-  public String name,
+  public String firstname,
           lastname,
           email,
           land,

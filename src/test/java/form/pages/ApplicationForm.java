@@ -3,6 +3,7 @@ package form.pages;
 import com.codeborne.selenide.*;
 import form.domain.*;
 
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 /**
@@ -10,21 +11,24 @@ import static com.codeborne.selenide.Selenide.*;
  */
 public class ApplicationForm {
 
-  public SelenideElement name = $(""),
-          lastname = $(""),
-          email = $(""),
-          land = $(""),
-          city = $(""),
-          message = $("");
+  public SelenideElement firstname = $("[name=applicantFirstName]"),
+          lastname = $("[name=applicantLastName]"),
+          email = $("[name=applicantEmail]"),
+          land = $(".country-wrapper [id$='-container']"),
+          city = $(".city-wrapper [id$='-container']"),
+          message = $("[name=applicantMessage]");
+
+  SelenideElement landOptions = $("[id$='-results']"),
+          cityOptions = $("[id$='-results']");
 
   public void fillInForm(Application application) {
-    name.setValue(application.name);
+    firstname.setValue(application.firstname);
     lastname.setValue(application.lastname);
     email.setValue(application.email);
     land.click();
-    land.selectOption(application.land);
+    landOptions.$(byText(application.land)).click();
     city.click();
-    city.selectOption(application.city);
+    cityOptions.$(byText(application.city)).click();
     message.setValue(application.message);
   }
 

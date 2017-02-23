@@ -16,26 +16,27 @@ public class EpamFormTest {
   @BeforeClass
   public static void prepare() {
     open("https://www.epam.com/careers/job-listings?query=qa&department%5B%5D=all&city=St-Petersburg&country=Russia");
-    $(byText("Senior QA Automation Engineer")).click();
+    $(byLinkText("Senior QA Automation Engineer")).closest("li").$(byLinkText("Apply")).click();
+    //open("https://www.epam.com/careers/job-listings/job.10190#apply");
   }
 
   @Test
   public void fillEpamForm() {
     Application application = new Application();
-    application.name = "Alexei";
+    application.firstname = "Alexei";
     application.lastname = "Vinogradov";
     application.email = "qa@vinogradov-it.de";
     application.land = "Germany";
-    application.city = "Dormagen";
+    application.city = "Dusseldorf";
     application.message = "Hire me, I am the best!";
 
     ApplicationForm form = new ApplicationForm();
     form.fillInForm(application);
-    form.name.shouldHave(value(application.name));
+    form.firstname.shouldHave(value(application.firstname));
     form.lastname.shouldHave(value("Vinogradov"));
     form.email.shouldHave(value(application.email));
-    form.land.shouldHave(value(application.land));
-    form.city.shouldHave(value(application.city));
+    form.land.shouldHave(text(application.land));
+    form.city.shouldHave(text(application.city));
     form.message.shouldHave(value(application.message));
 
 
