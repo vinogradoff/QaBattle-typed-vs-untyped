@@ -20,13 +20,13 @@ public class ControlsTest {
   public void checkboxTest() {
     SelenideElement acceptTerms = $("md-checkbox");
     acceptTerms.click();
-    acceptTerms.shouldHave(attribute("area-checked", "true"));
+    acceptTerms.shouldHave(attribute("aria-checked", "true"));
   }
 
   @Test
   public void switchTest() {
     SelenideElement enableSpecialOptions = $("md-switch");
     enableSpecialOptions.click();
-    enableSpecialOptions.shouldHave(attribute("area-checked", "true"));
+    enableSpecialOptions.shouldHave(attribute("aria-checked", "true"));
   }
 }
