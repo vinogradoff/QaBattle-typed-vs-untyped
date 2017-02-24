@@ -5,7 +5,6 @@ import form.pages.*;
 import org.junit.*;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 /**
@@ -16,7 +15,7 @@ public class EpamFormTest {
   @BeforeClass
   public static void prepare() {
     open("https://www.epam.com/careers/job-listings?query=qa&department%5B%5D=all&city=St-Petersburg&country=Russia");
-    $(byLinkText("Senior QA Automation Engineer")).closest("li").$(byLinkText("Apply")).click();
+    new JobsList().applyFor("Senior QA Automation Engineer", "St-Petersburg");
     //open("https://www.epam.com/careers/job-listings/job.10190#apply");
   }
 
@@ -38,7 +37,6 @@ public class EpamFormTest {
     form.country.shouldHave(text(application.country));
     form.city.shouldHave(text(application.city));
     form.message.shouldHave(value(application.message));
-
 
   }
 }

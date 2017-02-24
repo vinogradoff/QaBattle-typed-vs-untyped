@@ -17,7 +17,7 @@ public class UserNavigation {
 
   SelenideElement linkToSignIn = $(byLinkText("Other Sign in options")),
           navigationContainer = $("#consumer_user_nav"),
-          userLink = navigationContainer.$("#navUserMenu"),
+          userLink = navigationContainer.$("#navUserMenu .downArrow"),
           yourListsLink = navigationContainer.$(".sub_nav").$(byLinkText("Your Lists"));
 
   public void openSignInOptions() {
@@ -25,7 +25,8 @@ public class UserNavigation {
   }
 
   public void openYourLists() {
-    userLink.hover();
+    userLink.shouldBe(visible);
+    userLink.click();
     yourListsLink.click();
   }
 }
